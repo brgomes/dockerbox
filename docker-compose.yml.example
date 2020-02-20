@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  apache2:
-    container_name: ubuntu-server
+  php:
+    container_name: php-server
     build: "./"
     ports:
       - 80:80
