@@ -1,0 +1,27 @@
+version: "3"
+ 
+services:
+  apache2:
+    container_name: ubuntu_server
+    build: "./"
+    ports: 
+      - 80:80
+    environment:
+      - "PHP_INI_SCAN_DIR=:/usr/local/etc/php"
+    depends_on:
+      - mysql
+    volumes:
+      - ./logs:/var/log/apache2
+      - ./config/apache2.conf:/etc/apache2/sites-enabled/app.conf
+      - ./config/custom.ini:/usr/local/etc/php/custom.ini
+      - ./apps:/var/www
+
+  mysql:
+    container_name: mysql_server
+    image: mysql:5.7
+    ports: 
+      - 3306:3306
+    volumes:
+      - /usr/local/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
