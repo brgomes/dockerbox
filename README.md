@@ -6,7 +6,7 @@ Use docker to manage all your apache virtual hosts.
 
 Rename *docker-compose.yml.example* to *docker-compose.yml* with your configuration;
 
-Create a folder named *app/* and put your projects inside it;
+Create a folder named *apps/* and put your projects inside it;
 
 Rename *config/apache2.conf.example* to *config/apache2.conf*;
 
