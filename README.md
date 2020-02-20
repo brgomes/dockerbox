@@ -2,6 +2,8 @@
 
 Use docker to manage all your apache virtual hosts.
 
+This docker container has Apache, PHP, MySQL and Redis.
+
 ## 🤔 How to use
 
 Rename *docker-compose.yml.example* to *docker-compose.yml* with your configuration;

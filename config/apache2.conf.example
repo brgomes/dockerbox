@@ -22,6 +22,11 @@
     RewriteRule . /index.php [L]
   </IfModule>
 </Directory>
+
+<VirtualHost *:80>
+  DocumentRoot /var/www
+</VirtualHost>
+
 ####################################
 
 
