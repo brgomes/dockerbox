@@ -1,4 +1,4 @@
 apps/
-config/apache2.conf
-docker-compose.yml
+config/
 logs/
+docker-compose.yml

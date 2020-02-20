@@ -10,9 +10,11 @@ Rename *docker-compose.yml.example* to *docker-compose.yml* with your configurat
 
 Create a folder named *apps/* and put your projects inside it;
 
-Rename *config/apache2.conf.example* to *config/apache2.conf*;
+Copy *original/apache2.4.conf* to *config/apache2.4.conf*;
 
-Configure your apache virtual hosts in *config/apache2.conf* file.
+Copy *original/php.ini* to *config/php.ini*;
+
+Configure your apache virtual hosts in *config/apache2.4.conf* file.
 
 ## Docker
 
