@@ -1,5 +1,5 @@
 version: "3"
- 
+
 services:
   apache2:
     container_name: ubuntu_server
@@ -10,6 +10,7 @@ services:
       - "PHP_INI_SCAN_DIR=:/usr/local/etc/php"
     depends_on:
       - mysql
+      - redis
     volumes:
       - ./logs:/var/log/apache2
       - ./config/apache2.conf:/etc/apache2/sites-enabled/app.conf
@@ -18,10 +19,15 @@ services:
 
   mysql:
     container_name: mysql_server
-    image: mysql:5.7
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
     ports: 
       - 3306:3306
     volumes:
       - /usr/local/mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
+
+  redis:
+    container_name: redis_server
+    image: redis
