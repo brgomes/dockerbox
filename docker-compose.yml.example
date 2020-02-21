@@ -13,7 +13,7 @@ services:
       - redis
     volumes:
       - ./logs:/var/log/apache2
-      - ./config/apache2.4.conf:/etc/apache2/sites-enabled/app.conf
+      - ./config/apache-2.4.conf:/etc/apache2/sites-enabled/app.conf
       - ./config/php.ini:/usr/local/etc/php/custom.ini
       - ./apps:/var/www
 
