@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  php:
+    container_name: php-server
+    build: "./"
+    ports:
+      - 80:80
+    environment:
+      - "PHP_INI_SCAN_DIR=:/usr/local/etc/php"
+    depends_on:
+      - mysql
+      - redis
+    volumes:
+      - ./logs:/var/log/apache2
+      - ./config/apache2.4.conf:/etc/apache2/sites-enabled/app.conf
+      - ./config/php.ini:/usr/local/etc/php/custom.ini
+      - ./apps:/var/www
+
+  mysql:
+    container_name: mysql-server
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - /usr/local/mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  redis:
+    container_name: redis-server
+    image: redis
