@@ -8,7 +8,7 @@ This docker container has Apache, PHP, MySQL and Redis.
 
 Create the folder  */home/<your_user>/www* and put your projects inside it;
 
-Rename *docker-compose.yml.example* to *docker-compose.yml* with your configuration. Don't forget to put your unix username at line 18;
+Rename *docker-compose.yml.example* to *docker-compose.yml* with your configuration. **Don't forget to put your unix username at line 18**;
 
 Copy *original/apache2.4.conf* to *config/apache2.4.conf*;
 
