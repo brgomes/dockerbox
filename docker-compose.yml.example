@@ -8,6 +8,7 @@ services:
       - 80:80
     environment:
       - "PHP_INI_SCAN_DIR=:/usr/local/etc/php"
+    restart: always
     depends_on:
       - mysql
       - redis
@@ -20,6 +21,7 @@ services:
   mysql:
     container_name: mysql-server
     image: mysql:5.7
+    restart: always
     ports:
       - 3306:3306
     volumes:
@@ -30,3 +32,4 @@ services:
   redis:
     container_name: redis-server
     image: redis
+    restart: always
